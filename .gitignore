@@ -11,9 +11,8 @@ node_modules
 *.tmp
 *~
 
-# ES5
-dist
-public/dist
+# assets
+assets
 
 # lock 파일
 **/*.lock
