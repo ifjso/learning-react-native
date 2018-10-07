@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, Button } from 'react-native'
+import TouchableButton from "./Button/PressDemo"
 import { Strong, Em } from "./Text"
 
 
@@ -12,6 +13,8 @@ class ComponentExercise extends Component {
                     The quick <Em>brown</Em> fox jumped
                     over the lazy <Strong>dog</Strong>
                 </Text>
+                <Button title="Press me" color="#841584" accessibilityLabel="Press this button" />
+                <TouchableButton />
             </View>
         )
     }
