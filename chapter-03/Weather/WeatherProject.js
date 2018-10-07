@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, TextInput } from 'react-native'
+import Forecast from './Forecast'
 
 class WeatherProject extends Component {
     constructor(props) {
         super(props)
-        this.state = { zip: "" }
+        this.state = { zip: "", forecast: { main: 'AA', description: 'BB', temp: 6} }
     }
 
     _handleTextChange = event => {
@@ -17,6 +18,7 @@ class WeatherProject extends Component {
                 <Text style={styles.welcome}>
                     You input {this.state.zip}.
                 </Text>
+                { this.state.forecast && <Forecast {...this.state.forecast} /> }
                 <TextInput style={styles.input} onSubmitEditing={this._handleTextChange} />
             </View>
         )
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#F5FCFF"
+        backgroundColor: "#AAAAAA"
     },
     welcome: {
         fontSize: 20,
