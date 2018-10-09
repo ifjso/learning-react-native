@@ -6,13 +6,6 @@ const CIRCLE_COLOR = "blue"
 const CIRCLE_HIGHLIGHT_COLOR = "green"
 
 class PanResponderExample extends Component {
-    
-    _panResponder = {}
-    _previousLeft = 0
-    _previousTop = 0
-    _circleStyles = {}
-    circle = null
-
     constructor(props) {
         super(props)
 
