@@ -17,9 +17,5 @@ assets
 # lock 파일
 **/*.lock
 
-# native ios & android
-ios
-android
-
 # jest coverage
 coverage
