@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import InlineStyle from './components/InlineStyle';
+import ObjectStyle from './components/ObjectStyle';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -17,6 +18,7 @@ export default class App extends Component<Props> {
         return (
             <View style={styles.container}>
                 <InlineStyle />
+                <ObjectStyle />
             </View>
         );
     }
