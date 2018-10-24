@@ -11,6 +11,7 @@ import { StyleSheet, View } from 'react-native';
 
 import InlineStyle from './components/InlineStyle';
 import ObjectStyle from './components/ObjectStyle';
+import MergingStyle from './components/MergingStyle';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -19,6 +20,7 @@ export default class App extends Component<Props> {
             <View style={styles.container}>
                 <InlineStyle />
                 <ObjectStyle />
+                <MergingStyle>MergingStyle</MergingStyle>
             </View>
         );
     }
