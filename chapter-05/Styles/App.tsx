@@ -7,30 +7,14 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
 
-import InlineStyle from './components/InlineStyle';
-import ObjectStyle from './components/ObjectStyle';
-import MergingStyle from './components/MergingStyle';
+import LayoutWithFlexbox from './components/LayoutWithFlexbox';
 
 type Props = {};
 export default class App extends Component<Props> {
     public render () {
         return (
-            <View style={styles.container}>
-                <InlineStyle />
-                <ObjectStyle />
-                <MergingStyle>MergingStyle</MergingStyle>
-            </View>
+            <LayoutWithFlexbox />
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-});
