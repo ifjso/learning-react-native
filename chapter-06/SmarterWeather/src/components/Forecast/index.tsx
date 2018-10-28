@@ -1,13 +1,18 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const Forecast = ({ temp, main }) => (
+type Props = {
+    temp: number,
+    main: string,
+};
+
+const Forecast = (props: Props) => (
     <View style={styles.forecast}>
         <Text style={{ color: '#FFFFFF', fontSize: 72 }}>
-            {temp}°F
+            {props.temp}°F
         </Text>
         <Text style={{ color: '#FFFFFF', fontSize: 32 }}>
-            {main}
+            {props.main}
         </Text>
     </View>
 );
