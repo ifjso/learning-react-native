@@ -16,9 +16,9 @@ class PhotoBackdrop extends Component<Props, State> {
     }
 
     componentDidMount() {
-        CameraRoll.getPhotos({ first: 1 })
+        CameraRoll.getPhotos({ first: 2 })
             .then(
-                data => this.setState({ photoSource: { uri: data.edges[3].node.image.uri }}),
+                data => this.setState({ photoSource: { uri: data.edges[4].node.image.uri }}),
                 error => console.warn(error)
             );
     }

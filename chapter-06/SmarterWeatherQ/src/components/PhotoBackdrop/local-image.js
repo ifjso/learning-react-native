@@ -7,7 +7,7 @@ type Props = {
 };
 
 const PhotoBackdrop = (props: Props) =>
-    <ImageBackground style={styles.backdrop} source={{uri: './flowers.png'}} resizeMode="cover">
+    <ImageBackground style={styles.backdrop} source={require('./flowers.png')} resizeMode="cover">
         {props.children}
     </ImageBackground>;
 

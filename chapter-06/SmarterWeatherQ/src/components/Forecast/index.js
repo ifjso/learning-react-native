@@ -11,7 +11,8 @@ const Forecast = (props: Props) =>
         <Text style={{ color: '#FFFFFF', fontSize: 72 }}>
             {props.temp}°F
         </Text>
-        <Text stlye={{ color: '#FFFFFF', fontSize: 32 }}>
+        <Text style={{ color: '#FFFFFF', fontSize: 32 }}>
+            {props.main}
         </Text>
     </View>;
 

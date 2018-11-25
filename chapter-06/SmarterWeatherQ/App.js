@@ -9,7 +9,8 @@ import {
 import Forecast from './src/components/Forecast';
 import LocationButton from './src/components/LocationButton';
 import textStyles from './src/styles/typography';
-import PhotoBackdrop from './src/components/PhotoBackdrop';
+import PhotoBackdrop from './src/components/PhotoBackdrop/local-image';
+// import PhotoBackdrop from './src/components/PhotoBackdrop';
 import OpenWeatherMap from './lib/open-weather-map';
 
 type Props = {};
