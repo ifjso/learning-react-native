@@ -20,6 +20,12 @@
         "react",
         "react-native"
     ],
+    "settings": {
+        "react": {
+          "version": "16.6",
+          "flowVersion": "0.86"
+        }
+    },
     "rules": {
         "indent": [
             "error",
