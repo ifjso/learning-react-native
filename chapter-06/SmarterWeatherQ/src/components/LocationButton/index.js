@@ -3,10 +3,10 @@ import Button from '../Button';
 
 type Props = {
     onGetCoords: (lat: number, lon: number) => void
-}
+};
 
 const LocationButton = (props: Props) => {
-    const _onPress = () => {
+    const _onPress = (): void => {
         navigator.geolocation.getCurrentPosition(
             initialPosition => props.onGetCoords(initialPosition.coords.latitude, initialPosition.coords.longitude),
             error => alert(error.message),

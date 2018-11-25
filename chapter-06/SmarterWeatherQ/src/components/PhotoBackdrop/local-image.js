@@ -4,7 +4,7 @@ import styles from './style';
 
 type Props = {
     children?: React.ReactNode
-}
+};
 
 const PhotoBackdrop = (props: Props) =>
     <ImageBackground style={styles.backdrop} source={{uri: './flowers.png'}} resizeMode="cover">

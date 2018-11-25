@@ -4,11 +4,11 @@ import styles from './style';
 
 type Props = {
     children?: React.ReactNode
-}
+};
 
 type State = {
     photoSource: string
-}
+};
 
 class PhotoBackdrop extends Component<Props, State> {
     state = {

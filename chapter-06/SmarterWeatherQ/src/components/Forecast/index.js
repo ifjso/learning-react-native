@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 type Props = {
     temp: number,
     main: string
-}
+};
 
 const Forecast = (props: Props) =>
     <View style={styles.forecast}>
