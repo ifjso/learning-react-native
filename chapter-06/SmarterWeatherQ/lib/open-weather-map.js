@@ -1,7 +1,7 @@
 const WEATHER_API_KEY = "bbeb34ebf60ad50f7893e7440a1e2b0b";
 const API_STEM = "http://api.openweathermap.org/data/2.5/weather?";
 
-type Weather = {
+type Forecast = {
     main: string,
     description: string,
     temp: number
@@ -13,7 +13,7 @@ const zipUrl = (zip: string): string =>
 const latLonUrl = (lat: number, lon: number): string =>
     `${API_STEM}lat=${lat}&lon=${lon}&units=imperial&APPID=${WEATHER_API_KEY}`;
 
-const fetchForecast = (url: string): Promise<void | Weather> =>
+const fetchForecast = (url: string): Promise<void | Forecast> =>
     fetch(url)
         .then(response => response.json())
         .then(responseJSON => ({
@@ -23,10 +23,10 @@ const fetchForecast = (url: string): Promise<void | Weather> =>
         }))
         .catch(error => console.error(error));
 
-const fetchZipForecast = (zip: string): Promise<void | Weather> =>
+const fetchZipForecast = (zip: string): Promise<void | Forecast> =>
     fetchForecast(zipUrl(zip));
 
-const fetchLatLonForecast = (lat: number, lon: number): Promise<void | Weather> =>
+const fetchLatLonForecast = (lat: number, lon: number): Promise<void | Forecast> =>
     fetchForecast(latLonUrl(lat, lon));
 
 export default {

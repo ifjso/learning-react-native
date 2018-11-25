@@ -1,49 +1,112 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import React, { Component } from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+    TextInput,
+    AsyncStorage
+} from 'react-native';
+import Forecast from './src/components/Forecast';
+import LocationButton from './src/components/LocationButton';
+import textStyles from './src/styles/typography';
+import PhotoBackdrop from './src/components/PhotoBackdrop';
+import OpenWeatherMap from './lib/open-weather-map';
 
 type Props = {};
-export default class App extends Component<Props> {
+
+type State = { forecast: { main: string, temp: number }};
+
+const STORAGE_KEY = "@SmarterWeather:zip";
+
+export default class App extends Component<Props, State> {
+    state = { forecast: null };
+
+    componentDidMount() {
+        AsyncStorage
+            .getItem(STORAGE_KEY)
+            .then(value => {
+                if (value !== null) {
+                    this._getForecastForZip(value);
+                }
+            })
+            .catch(error => console.error(`AsyncStorage error: ${error.message}`));
+    }
+
+    _getForecastForZip = (zip: string): void => {
+        AsyncStorage
+            .setItem(STORAGE_KEY, zip)
+            .then(() => console.log(`Saved selection to disk: ${zip}`))
+            .catch(error => console.error(`AsyncStorage error: ${error.message}`));
+
+        OpenWeatherMap.fetchZipForecast(zip).then(forecast => this.setState({ forecast }));
+    };
+
+    _getForecastForCoords = (lat: number, lon: number): void =>
+        OpenWeatherMap.fetchLatLonForecast(lat, lon).then(forecast => this.setState({ forecast }));
+
+
+    _handleTextChange = (event: SyntheticEvent<HTMLButtonElement>): void => {
+        let zip = event.nativeEvent.text;
+        this._getForecastForZip(zip);
+    }
+
     render() {
+        let content;
+        if (this.state.forecast !== null) {
+            content = (
+                <View style={styles.row}>
+                    <Forecast
+                        main={this.state.forecast.main}
+                        temp={this.state.forecast.temp}
+                    />
+                </View>
+            );
+        }
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-            </View>
+            <PhotoBackdrop>
+                <View style={styles.overlay}>
+                    <View style={styles.row}>
+                        <Text style={textStyles.mainText}>
+                            Forecast for
+                        </Text>
+
+                        <View style={styles.zipContainer}>
+                            <TextInput
+                                style={[styles.mainText, styles.zipCode]}
+                                onSubmitEditing={this._handleTextChange}
+                                underlineColorAndroid="transparent"
+                            />
+                        </View>
+                    </View>
+
+                    <View style={styles.row}>
+                        <LocationButton onGetCoords={this._getForecastForCoords} />
+                    </View>
+
+                    {content}
+                </View>
+            </PhotoBackdrop>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
+    overlay: { backgroundColor: 'rgba(0, 0, 0, 0.1)' },
+    row: {
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        justifyContent: 'center',
+        padding: 24
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
+    zipContainer: {
+        borderBottomColor: '#DDDDDD',
+        borderBottomWidth: 1,
+        marginLeft: 5,
+        marginTop: 3,
+        width: 80,
+        height: textStyles.baseFontSize * 2,
+        justifyContent: 'flex-end'
     },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+    zipCode: { flex: 1 }
 });
