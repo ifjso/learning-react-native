@@ -11,11 +11,11 @@ type State = {
 };
 
 class PhotoBackdrop extends Component<Props, State> {
-    public state = {
+    state = {
         photoSource: null
     };
 
-    public componentDidMount () {
+    componentDidMount () {
         CameraRoll
             .getPhotos({ first: 5 })
             .then(
@@ -24,7 +24,7 @@ class PhotoBackdrop extends Component<Props, State> {
             );
     }
 
-    public render () {
+    render () {
         return (
             <ImageBackground style={styles.backdrop} source={this.state.photoSource} resizeMode="cover" >
                 {this.props.children}
