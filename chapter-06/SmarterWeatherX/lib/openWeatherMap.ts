@@ -6,7 +6,7 @@ const zipUrl = (zip: string): string => `${API_STEM}q=${zip}&units=imperial&APPI
 const latLonUrl = (lat: number, lon: number): string =>
     `${API_STEM}lat=${lat}&lon=${lon}&units=imperial&APPID=${WEATHER_API_KEY}`;
 
-const fetchForecast = (url: string) =>
+const fetchForecast = (url: string): Promise<void | {main: string, description: string, name: string, temp: number}> =>
     fetch(url)
         .then(response => response.json())
         .then(responseJSON => ({
