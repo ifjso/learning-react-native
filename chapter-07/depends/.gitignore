@@ -58,3 +58,6 @@ buck-out/
 # Jest
 __tests__
 .jest
+
+# mp4
+*.mp4
