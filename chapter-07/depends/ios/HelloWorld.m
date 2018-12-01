@@ -1,9 +1,13 @@
-//
-//  HelloWorld.m
-//  depends
-//
-//  Created by jso on 01/12/2018.
-//  Copyright © 2018 Facebook. All rights reserved.
-//
+#import "HelloWorld.h"
+#import <React/RCTLog.h>
 
-#import <Foundation/Foundation.h>
+@implementation HelloWorld
+
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(greeting:(NSString *)name)
+{
+  RCTLogInfo(@"Saluton, %@", name);
+}
+
+@end

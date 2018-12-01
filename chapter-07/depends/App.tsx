@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { random } from 'lodash';
 import Video from 'react-native-video';
+import HelloWorld from './src/HelloWorld';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     console.log(`Your lucky number is ${random(0, 100)}`);
+
+    HelloWorld.greeting('Bonnie');
 
     return (
       <View style={styles.container}>
