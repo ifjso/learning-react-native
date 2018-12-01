@@ -56,5 +56,5 @@ buck-out/
 *.jsbundle
 
 # Jest
-.jest/
-
+__tests__
+.jest
