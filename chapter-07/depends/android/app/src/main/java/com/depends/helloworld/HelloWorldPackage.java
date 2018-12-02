@@ -1,4 +1,3 @@
-
 package com.depends.helloworld;
 
 import com.facebook.react.ReactPackage;
