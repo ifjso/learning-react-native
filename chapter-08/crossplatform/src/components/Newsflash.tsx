@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyleSheet, Text, View, Alert } from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, Alert } from 'react-native';
 
-export default class Newsflash extends React.Component {
+export default class Newsflash extends Component {
   componentDidMount() {
-    Alert.alert('Hey!', "You're on Android.");
+    Alert.alert('Hey!', `You're on ${Platform.OS}.`);
   }
 
   render() {
