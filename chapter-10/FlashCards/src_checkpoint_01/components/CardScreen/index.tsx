@@ -12,7 +12,7 @@ type Stats = {
   back: string;
 };
 
-class NewCard extends Component<Props, Stats> {
+class CardScreen extends Component<Props, Stats> {
   constructor(props: Props) {
     super(props);
     this.setState({ front: '', back: '' });
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
   buttonRow: { flexDirection: 'row' }
 });
 
-export default NewCard;
+export default CardScreen;
