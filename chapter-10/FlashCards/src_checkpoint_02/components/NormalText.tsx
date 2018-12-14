@@ -13,7 +13,7 @@ const NormalText = ({
 const { width } = Dimensions.get('window');
 
 const scaled = StyleSheet.create({
-  normal: { fontSize: (width * 1.0) / scalingFactors.normal }
+  normal: { fontSize: width / scalingFactors.normal }
 });
 
 export default NormalText;
