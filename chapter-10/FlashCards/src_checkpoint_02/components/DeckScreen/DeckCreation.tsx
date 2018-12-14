@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { CreateDeckButton, EnterDeck } from './DeckCreationFields';
 
-type Props = {};
+type Props = {
+  create: (name: string) => void;
+};
 
 type State = {
   showingNameField: boolean;
@@ -13,9 +15,9 @@ class DeckCreation extends Component<Props, State> {
     this.state = { showingNameField: false };
   }
 
-  _newDeck = () => {
-    console.warn('Not implemented');
+  _newDeck = (name: string) => {
     this.setState({ showingNameField: false });
+    this.props.create(name);
   };
 
   _showField = () => this.setState({ showingNameField: true });

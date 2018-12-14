@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { NavigationScreenProp, NavigationRoute } from 'react-navigation';
 import Button from '../Button';
 import LabeledInput from '../LabeledInput';
 import NormalText from '../NormalText';
 import colors from '../../styles/colors';
 
-type Props = {};
+type Props = {
+  navigation: NavigationScreenProp<NavigationRoute>;
+};
 
 type Stats = {
   front: string;
@@ -13,6 +16,8 @@ type Stats = {
 };
 
 class CardScreen extends Component<Props, Stats> {
+  static navigationOptions = { title: 'Create Card' };
+
   constructor(props: Props) {
     super(props);
     this.setState({ front: '', back: '' });
@@ -22,11 +27,14 @@ class CardScreen extends Component<Props, Stats> {
 
   _handleBack = (text: string) => this.setState({ front: text });
 
-  _createCard = () => console.warn('Not implemented');
+  _createCard = () => {
+    console.warn('Data saving not implemented.');
+    this.props.navigation.navigate('CardCreation');
+  };
 
-  _reviewDeck = () => console.warn('Not implemented');
+  _reviewDeck = () => this.props.navigation.navigate('Review');
 
-  _doneCreating = () => console.warn('Not implemented');
+  _doneCreating = () => this.props.navigation.navigate('Home');
 
   render() {
     return (

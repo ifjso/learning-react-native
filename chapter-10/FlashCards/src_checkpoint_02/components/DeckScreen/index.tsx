@@ -22,12 +22,20 @@ class DeckScreen extends Component<Props, State> {
     this.state = { decks: MockDecks };
   }
 
-  _review = () => {
-    console.warn('Actual reviews not implemented');
-    this.props.navigation.navigate('Review');
+  _createDeck = () => {
+    console.warn('Data saving not implemented.');
+    this.props.navigation.navigate('CardCreation');
   };
 
-  _addCards = () => this.props.navigation.navigate('CardCreation');
+  _addCards = () => {
+    console.warn('Data saving not implemented.');
+    this.props.navigation.navigate('CardCreation');
+  };
+
+  _review = () => {
+    console.warn('Actual reviews not implemented.');
+    this.props.navigation.navigate('Review');
+  };
 
   _mkDeckViews = () => {
     if (!this.state.decks) {
@@ -39,8 +47,8 @@ class DeckScreen extends Component<Props, State> {
         key={deck.id}
         deck={deck}
         count={deck.cards.length}
-        review={this._review}
         add={this._addCards}
+        review={this._review}
       />
     ));
   };
@@ -49,7 +57,7 @@ class DeckScreen extends Component<Props, State> {
     return (
       <View>
         {this._mkDeckViews()}
-        <DeckCreation />
+        <DeckCreation create={this._createDeck} />
       </View>
     );
   }

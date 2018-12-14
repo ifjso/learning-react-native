@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { NavigationScreenProp, NavigationRoute } from 'react-navigation';
 import ViewCard from './ViewCard';
 import { MockReviews } from '../../data/Mocks';
 import { QuizCardView } from '../../data/QuizCardView';
 import { mkReviewSummary } from './ReviewSummary';
 import colors from '../../styles/colors';
 
-type Props = {};
+type Props = {
+  navigation: NavigationScreenProp<NavigationRoute>;
+};
 
 type State = {
   numReviewed: number;
@@ -16,6 +19,8 @@ type State = {
 };
 
 class ReviewScreen extends Component<Props, State> {
+  static navigationOptions = { title: 'Review' };
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -34,12 +39,17 @@ class ReviewScreen extends Component<Props, State> {
     this.setState(prevState => ({ numReviewed: prevState.numReviewed + 1 }));
   };
 
-  _nextReview = () =>
+  _nextReview = () => {
+    console.warn('Showing next review, but data saving not implemented.');
     this.setState(prevState => ({
       currentReview: prevState.currentReview + 1
     }));
+  };
 
-  _quitReviewing = () => console.warn('Not implemented');
+  _quitReviewing = () => {
+    console.warn('Data saving not implemented.');
+    this.props.navigation.goBack();
+  };
 
   _contents = () => {
     if (!this.state.reviews || this.state.reviews.length === 0) {
