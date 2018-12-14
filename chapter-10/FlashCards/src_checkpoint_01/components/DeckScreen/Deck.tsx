@@ -3,9 +3,9 @@ import { StyleSheet, View } from 'react-native';
 import Button from '../Button';
 import NormalText from '../NormalText';
 import colors from '../../styles/colors';
-import DeckData from '../../data/Deck';
+import DeckModel from '../../data/Deck';
 
-const Deck = ({ deck, count }: { deck: DeckData; count: number }) => {
+const Deck = ({ deck, count }: { deck: DeckModel; count: number }) => {
   const _review = () => console.warn('Not implemented');
   const _addCards = () => console.warn('Not implemented');
 
