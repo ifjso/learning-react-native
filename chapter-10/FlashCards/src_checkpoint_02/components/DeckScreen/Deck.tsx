@@ -8,14 +8,16 @@ import DeckModel from '../../data/Deck';
 const Deck = ({
   deck,
   count,
-  review
+  review,
+  add
 }: {
   deck: DeckModel;
   count: number;
   review: () => void;
+  add: () => void;
 }) => {
   const _review = () => review();
-  const _addCards = () => console.warn('Not implemented');
+  const _addCards = () => add();
 
   return (
     <View style={styles.deckGroup}>

@@ -27,6 +27,8 @@ class DeckScreen extends Component<Props, State> {
     this.props.navigation.navigate('Review');
   };
 
+  _addCards = () => this.props.navigation.navigate('CardCreation');
+
   _mkDeckViews = () => {
     if (!this.state.decks) {
       return null;
@@ -38,6 +40,7 @@ class DeckScreen extends Component<Props, State> {
         deck={deck}
         count={deck.cards.length}
         review={this._review}
+        add={this._addCards}
       />
     ));
   };
