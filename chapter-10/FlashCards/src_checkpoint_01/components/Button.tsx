@@ -8,7 +8,7 @@ const Button = ({
   style,
   children
 }: {
-  disabled: boolean;
+  disabled?: boolean;
   onPress: () => void;
   style?: object;
   children?: React.ReactNode;
