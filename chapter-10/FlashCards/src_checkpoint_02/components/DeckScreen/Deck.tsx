@@ -5,8 +5,16 @@ import NormalText from '../NormalText';
 import colors from '../../styles/colors';
 import DeckModel from '../../data/Deck';
 
-const Deck = ({ deck, count }: { deck: DeckModel; count: number }) => {
-  const _review = () => console.warn('Not implemented');
+const Deck = ({
+  deck,
+  count,
+  review
+}: {
+  deck: DeckModel;
+  count: number;
+  review: () => void;
+}) => {
+  const _review = () => review();
   const _addCards = () => console.warn('Not implemented');
 
   return (

@@ -1,6 +1,9 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
-import Logo from './Header/logo';
+import {
+  createStackNavigator,
+  createNavigationContainer
+} from 'react-navigation';
+import Logo from './Header/Logo';
 import DeckScreen from './DeckScreen';
 import CardScreen from './CardScreen';
 import ReviewScreen from './ReviewScreen';
@@ -16,4 +19,6 @@ const navigator = createStackNavigator({
   CardCreation: { screen: CardScreen, navigationOptions: headerOptions }
 });
 
-export default navigator;
+const FlashCards = createNavigationContainer(navigator);
+
+export default FlashCards;
