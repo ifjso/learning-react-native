@@ -14,7 +14,7 @@ const LabeledInput = ({
   onEntry: (text: string) => void;
   onChange: (text: string) => void;
   clearOnSubmit: boolean;
-  inputStyle: object;
+  inputStyle?: object;
 }) => (
   <View style={styles.wrapper}>
     <NormalText style={styles.label}>{label}</NormalText>
