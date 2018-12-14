@@ -1,5 +1,5 @@
 import React from 'react';
-import FlashCards from './src_checkpoint_01/components/FlashCards';
+import FlashCards from './src_checkpoint_02/components/FlashCards';
 
 const App = () => <FlashCards />;
 
