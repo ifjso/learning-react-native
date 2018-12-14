@@ -15,6 +15,8 @@ type State = {
 };
 
 class DeckScreen extends Component<Props, State> {
+  static navigationOptions = { title: 'All Decks' };
+
   constructor(props: Props) {
     super(props);
     this.state = { decks: MockDecks };
