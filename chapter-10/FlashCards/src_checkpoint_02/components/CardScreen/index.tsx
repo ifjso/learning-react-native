@@ -23,9 +23,9 @@ class CardScreen extends Component<Props, Stats> {
     this.setState({ front: '', back: '' });
   }
 
-  _handleFront = (text: string) => this.setState({ back: text });
+  _handleFront = (text: string) => this.setState({ front: text });
 
-  _handleBack = (text: string) => this.setState({ front: text });
+  _handleBack = (text: string) => this.setState({ back: text });
 
   _createCard = () => {
     console.warn('Data saving not implemented.');
