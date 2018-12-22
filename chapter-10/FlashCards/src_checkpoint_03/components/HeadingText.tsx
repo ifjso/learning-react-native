@@ -2,12 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, Dimensions } from 'react-native';
 import { fonts, scalingFactors } from '../styles/fonts';
 
-const HeadingText = ({
+const HeadingText: React.FunctionComponent<{ style?: object }> = ({
   style,
   children
-}: {
-  style?: object;
-  children?: React.ReactNode;
 }) => <Text style={[style, fonts.big, scaled.big]}>{children}</Text>;
 
 const { width } = Dimensions.get('window');

@@ -2,16 +2,17 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../styles/colors';
 
-const Button = ({
+type Props = {
+  disabled?: boolean;
+  style?: object;
+  onPress: () => void;
+};
+
+const Button: React.FunctionComponent<Props> = ({
   disabled = false,
   children,
   style,
   onPress
-}: {
-  disabled?: boolean;
-  children?: React.ReactNode;
-  style?: object;
-  onPress: () => void;
 }) => {
   const opacity = disabled ? 1 : 0.5;
 

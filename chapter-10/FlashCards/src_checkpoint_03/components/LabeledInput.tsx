@@ -3,18 +3,20 @@ import { StyleSheet, View } from 'react-native';
 import Input from './Input';
 import NormalText from './NormalText';
 
-const LabeledInput = ({
+type Props = {
+  label: string;
+  clearOnSubmit: boolean;
+  inputStyle?: object;
+  onEntry: (text: string) => void;
+  onChange: (text: string) => void;
+};
+
+const LabeledInput: React.FunctionComponent<Props> = ({
   label,
   onEntry,
   onChange,
   clearOnSubmit,
   inputStyle
-}: {
-  label: string;
-  onEntry: (text: string) => void;
-  onChange: (text: string) => void;
-  clearOnSubmit: boolean;
-  inputStyle?: object;
 }) => {
   return (
     <View style={styles.wrapper}>

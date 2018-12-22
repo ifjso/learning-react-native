@@ -5,17 +5,14 @@ import Button from '../Button';
 import NormalText from '../NormalText';
 import colors from '../../styles/colors';
 
-const Deck = ({
-  deck,
-  count,
-  review,
-  add
-}: {
+type Props = {
   deck: DeckModel;
   count: number;
   review: () => void;
   add: () => void;
-}) => (
+};
+
+const Deck: React.FunctionComponent<Props> = ({ deck, count, review, add }) => (
   <View style={styles.deckGroup}>
     <Button style={styles.deckButton} onPress={review}>
       <NormalText>
