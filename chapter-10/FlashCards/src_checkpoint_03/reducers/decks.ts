@@ -12,7 +12,7 @@ const decksWithNewCard = (oldDecks: Deck[], card: Card): Deck[] =>
     return deck;
   });
 
-const reducer = (state = [], action: any) => {
+const reducer = (state: Deck[] = [], action: any) => {
   console.warn('Changes are not persisted to disk');
 
   switch (action.type) {
