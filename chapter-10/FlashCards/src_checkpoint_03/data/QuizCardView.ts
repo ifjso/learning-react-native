@@ -28,7 +28,7 @@ const makeReviews = (cards: Card[]): QuizCardView[] => {
     return cards.map(card => {
       const others = cards.filter(other => other.id !== card.id);
       const answers = _.shuffle(
-        [card[sideTwo]].concat(_.sampleSize(_.map(others, sideTwo)), 3)
+        [card[sideTwo]].concat(_.sampleSize(_.map(others, sideTwo), 3))
       );
 
       return new QuizCardView(
