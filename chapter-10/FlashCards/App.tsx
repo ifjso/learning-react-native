@@ -8,7 +8,7 @@ const store = createStore(reducer);
 
 const App = () => (
   <Provider store={store}>
-    <Flashcards />;
+    <Flashcards />
   </Provider>
 );
 
