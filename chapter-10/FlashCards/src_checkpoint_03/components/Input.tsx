@@ -21,14 +21,8 @@ class Input extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    alert(props.clearOnSubmit);
     this.state = { text: '' };
   }
-
-  _create = () => {
-    this.props.onEntry(this.state.text);
-    this.setState({ text: '' });
-  };
 
   _onSubmit = (ev: any) => {
     this.props.onEntry(ev.nativeEvent.text);
