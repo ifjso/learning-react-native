@@ -1,6 +1,15 @@
 import React from 'react';
-import FlashCards from './src_checkpoint_02/components/FlashCards';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { reducer } from '../FlashCards/src_checkpoint_03/reducers';
+import Flashcards from './src_checkpoint_03/components/Flashcards';
 
-const App = () => <FlashCards />;
+const store = createStore(reducer);
+
+const App = () => (
+  <Provider store={store}>
+    <Flashcards />;
+  </Provider>
+);
 
 export default App;
