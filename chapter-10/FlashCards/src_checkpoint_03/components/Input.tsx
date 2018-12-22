@@ -5,7 +5,7 @@ import { fonts } from '../styles/fonts';
 
 type Props = {
   style?: object;
-  clearOnSubmit: boolean;
+  clearOnSubmit?: boolean;
   onEntry: (text: string) => void;
   onChange: (text: string) => void;
 };
