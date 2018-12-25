@@ -29,4 +29,4 @@ export const stopReview = () => ({ type: STOP_REVIEW, data: {} });
 
 export const nextReview = () => ({ type: NEXT_REVIEW, data: {} });
 
-export const loadData = (data: any) => ({ type: LOAD_DATA, data });
+export const loadData = (data: Deck[]) => ({ type: LOAD_DATA, data });
