@@ -8,6 +8,8 @@
     "lint": "tslint 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
+    "md5": "^2.2.1",
     "react": "16.6.3",
     "react-native": "0.57.8",
     "react-native-typescript-transformer": "^1.2.11",
@@ -16,6 +18,8 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
+    "@types/lodash": "^4.14.119",
+    "@types/md5": "^2.1.33",
     "@types/react": "^16.7.18",
     "@types/react-native": "^0.57.20",
     "@types/react-redux": "^6.0.11",
