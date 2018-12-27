@@ -1,13 +1,28 @@
 import React, { FC } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../style/colors';
 
 type Props = {
+  disabled: boolean;
   style: object;
   onPress: () => void;
 };
 
-const Button: FC<Props> = ({}) => {};
+const Button: FC<Props> = ({disabled = false, onPress, style, children}) => {
+  const opacity = disabled ? 1 : 0.5;
+
+  return (
+    <TouchableOpacity 
+      activeOpacity={opacity}
+      onPress={onPress}
+      style={[styles.wideButton, style]}
+    >
+      {children}
+    </TouchableOpacity>
+  )
+};
+
+Button.displayName = 'Button';
 
 const styles = StyleSheet.create({
   wideButton: {
