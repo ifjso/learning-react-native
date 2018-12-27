@@ -4,8 +4,8 @@ import colors from '../styles/colors';
 import { fonts } from '../styles/fonts';
 
 type Props = {
-  clearOnSubmit: boolean;
-  style: object;
+  clearOnSubmit?: boolean;
+  style?: object;
   onEntry: (text: string) => void;
   onChange: (text: string) => void;
 };

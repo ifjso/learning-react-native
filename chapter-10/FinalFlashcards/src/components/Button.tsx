@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../styles/colors';
 
 type Props = {
-  disabled: boolean;
+  disabled?: boolean;
   style: object;
   onPress: () => void;
 };
