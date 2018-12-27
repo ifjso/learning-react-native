@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import colors from '../style/colors';
+import colors from '../styles/colors';
 
 type Props = {
   disabled: boolean;
@@ -8,18 +8,18 @@ type Props = {
   onPress: () => void;
 };
 
-const Button: FC<Props> = ({disabled = false, onPress, style, children}) => {
+const Button: FC<Props> = ({ disabled = false, onPress, style, children }) => {
   const opacity = disabled ? 1 : 0.5;
 
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       activeOpacity={opacity}
       onPress={onPress}
       style={[styles.wideButton, style]}
     >
       {children}
     </TouchableOpacity>
-  )
+  );
 };
 
 Button.displayName = 'Button';
