@@ -78,6 +78,6 @@ const mapStateToProps = (state: any) => ({
 });
 
 export default connect(
-  mapDispatchToProps,
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(DeckScreen);
