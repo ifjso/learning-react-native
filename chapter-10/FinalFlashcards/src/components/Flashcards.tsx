@@ -29,10 +29,10 @@ const Navigator = StackNavigator({
   }
 });
 
-const App = () => (
+const Flashcards = () => (
   <Provider store={store}>
     <Navigator />
   </Provider>
 );
 
-export default App;
+export default Flashcards;
