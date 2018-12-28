@@ -5,7 +5,6 @@ const read = async (key: string, deserializer: (serialized: Deck) => Deck) => {
   try {
     const val = await AsyncStorage.getItem(key);
     if (val !== null) {
-      alert(val);
       return JSON.parse(val).map((serialized: Deck) =>
         deserializer(serialized)
       );

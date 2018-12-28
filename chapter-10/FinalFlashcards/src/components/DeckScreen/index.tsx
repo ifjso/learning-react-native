@@ -64,9 +64,11 @@ const DeckScreen: NavOptions = ({
   );
 };
 
+DeckScreen.navigationOptions = { title: 'All Decks' };
+
 const mapDispatchToProps = (dispatch: any) => ({
   createDeck: (deckAction: any) => dispatch(deckAction),
-  reviewDeck: (deckID: string) => dispatch(reviewDeck(deckID))
+  review: (deckID: string) => dispatch(reviewDeck(deckID))
 });
 
 const mapStateToProps = (state: any) => ({
