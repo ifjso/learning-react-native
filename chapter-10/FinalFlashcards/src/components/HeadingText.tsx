@@ -3,7 +3,7 @@ import { StyleSheet, Text, Dimensions } from 'react-native';
 import { fonts, scalingFactors } from '../styles/fonts';
 
 type Props = {
-  style: object;
+  style?: object;
 };
 
 const HeadingText: FC<Props> = ({ style, children }) => (
