@@ -6,9 +6,9 @@ import NormalText from './NormalText';
 type Props = {
   label: string;
   clearOnSubmit: boolean;
-  inputStyle: object;
-  onEntry: () => void;
-  onChange: () => void;
+  inputStyle?: object;
+  onEntry: (text: string) => void;
+  onChange: (text: string) => void;
 };
 
 const LabeledInput: FC<Props> = ({
