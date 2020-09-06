@@ -17,6 +17,14 @@
     "metro-react-native-babel-preset": "0.47.0",
     "react-test-renderer": "16.5.0"
   },
+  "resolutions": {
+    "yargs-parser": "^13.1.2",
+    "minimist": "^0.2.1",
+    "kind-of": "^6.0.3",
+    "set-value": "^2.0.1",
+    "mem": "^4.0.0",
+    "acorn": "^6.4.1"
+  },
   "jest": {
     "preset": "react-native"
   }
