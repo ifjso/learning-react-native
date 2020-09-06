@@ -14,8 +14,5 @@ node_modules
 # assets
 assets
 
-# lock 파일
-**/*.lock
-
 # jest coverage
 coverage
