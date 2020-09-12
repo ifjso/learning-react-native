@@ -23,7 +23,8 @@
     "kind-of": "^6.0.3",
     "set-value": "^2.0.1",
     "mem": "^4.0.0",
-    "acorn": "^6.4.1"
+    "acorn": "^6.4.1",
+    "node-fetch": "^2.6.1"
   },
   "jest": {
     "preset": "react-native"
